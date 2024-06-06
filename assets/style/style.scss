@@ -1,0 +1,772 @@
+@import "variables";
+@import "mixin";
+@font-face {
+  font-family: "madeThin";
+  src: url(../fonts/MADE\ Outer\ Sans\ Thin\ PERSONAL\ USE.otf);
+}
+@font-face {
+  font-family: "madeLight";
+  src: url(../fonts/MADE\ Outer\ Sans\ Light\ PERSONAL\ USE.otf);
+}
+@font-face {
+  font-family: "madeRegular";
+  src: url(../fonts/MADE\ Outer\ Sans\ Regular\ PERSONAL\ USE.otf);
+}
+@font-face {
+  font-family: "madeBold";
+  src: url(../fonts/MADE\ Outer\ Sans\ Bold\ PERSONAL\ USE.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+html,
+body {
+  @include query("miniDesktop") {
+    font-size: 14px;
+  }
+}
+html,
+body {
+  @include query("tablet") {
+    font-size: 12px;
+  }
+}
+html,
+body {
+  @include query("mobile") {
+    font-size: 10px;
+  }
+}
+.container {
+  position: relative;
+  font-family: "madeLight";
+  background-image: url(../images/bgPatter.svg);
+  background-size: 200px;
+  @include textRegulary;
+  width: 100%;
+  background-color: $backgroundBlackColor;
+  header {
+    @include query("desktop") {
+      padding: 2rem 8rem;
+    }
+    @include query("miniDesktop") {
+      padding: 2rem 4rem;
+    }
+    @include query("tablet") {
+      padding: 2rem;
+    }
+
+    position: sticky !important;
+    background-color: rgba(0, 0, 0, 0.643);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px rgba(255, 255, 0, 0.792), 0 3px 2px rgba(3, 3, 3, 0.299);
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    z-index: 100;
+    justify-content: space-between;
+    padding: 2rem 14rem;
+    img {
+      height: 100%;
+    }
+
+    nav {
+      @include query("tablet") {
+        display: none;
+      }
+      ul {
+        display: flex;
+        gap: 3rem;
+        li {
+          a {
+            @include textRegulary;
+            font-family: "madeThin";
+            transition: $baseTransition;
+            &:hover {
+              transition: $baseTransition;
+
+              color: $baseYellow;
+              border-top: 1px solid $baseYellow;
+            }
+          }
+        }
+      }
+    }
+    #showMenu {
+      width: 100%;
+      display: none;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #000000;
+      z-index: 10;
+      img {
+        width: 160px;
+        height: 150px;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      div {
+        position: absolute;
+        width: 100%;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $baseYellow;
+        @include textStructure("madeThin", 0.7rem);
+        text-align: center;
+        @include displayFlexCol;
+        gap: 10px;
+        @include query("mobile"){
+          font-size: 1.5rem;
+        }
+        font-size: 2.2rem;
+      }
+    }
+    /* burgermenu */
+    .burgermenu {
+      @include query("tablet") {
+        display: block;
+        right: 3.5%;
+        top: -30%;
+      }
+      @include query("mobile") {
+        top: -38%;
+      }
+      display: none;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      margin-top: 20px;
+      right: 9%;
+      top: -23%;
+      z-index: 1000;
+    }
+    .ham {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 400ms;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .hamRotate.active {
+      transform: rotate(45deg);
+    }
+    .hamRotate180.active {
+      transform: rotate(180deg);
+    }
+    .line {
+      fill: none;
+      transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+      stroke: $baseYellow;
+      stroke-width: 4.5;
+      stroke-linecap: round;
+    }
+    .ham1 .top {
+      stroke-dasharray: 40 139;
+    }
+    .ham1 .bottom {
+      stroke-dasharray: 40 180;
+    }
+    .ham1.active .top {
+      stroke-dashoffset: -98px;
+    }
+    .ham1.active .bottom {
+      stroke-dashoffset: -138px;
+    }
+  }
+  main {
+    .mainContent {
+      @include query("desktop") {
+        padding: 0 2rem 0 8rem;
+      }
+      @include query("miniDesktop") {
+        padding: 0 4rem;
+        margin-bottom: 0rem;
+      }
+      @include query("tablet") {
+        padding: 0 0 0 2rem;
+        height: 70vh;
+      }
+
+      background-color: $backgroundBlackColor;
+      padding-left: 14rem;
+      padding-right: 6rem;
+      display: flex;
+      justify-content: space-between;
+      box-shadow: 0 5px 100px 100px $backgroundBlackColor;
+      margin-bottom: 10rem;
+      height: 90vh;
+      .mainImage {
+        background-image: url(../images/vintegeManOnHome.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        width: 90%;
+        @include query("desktop") {
+          background-position: 100%;
+          width: 100%;
+        }
+        @include query("miniDesktop") {
+          width: 100%;
+        }
+        @include query("tablet") {
+          background-size: 70%;
+          background-position: 140%;
+        }
+        @include query("mobile") {
+          background-size: 80%;
+        }
+      }
+      .mainText {
+        @include query("tablet") {
+          width: 70%;
+          h1 {
+            font-size: 2.6rem !important;
+          }
+        }
+        @include query("mobile") {
+          width: 95%;
+          text-align: center;
+          backdrop-filter: brightness(60%);
+        }
+        @include displayFlexCol;
+        gap: 3rem;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 50%;
+        h1 {
+          font-size: 3rem;
+        }
+        .btn {
+          @include query("mobile") {
+            align-self: center;
+            margin-top: 5rem;
+          }
+          @include yellowBtn;
+          width: auto;
+          align-self: flex-start;
+          transition: $baseTransition;
+          &:hover {
+            cursor: pointer;
+            @include yellowBtnOnHover;
+          }
+        }
+      }
+    }
+    .adventage {
+      @include query("desktop") {
+        padding: 0 8rem;
+      }
+      @include query("miniDesktop") {
+        padding: 4rem 2.5rem 2.5rem;
+      }
+      @include query("tablet") {
+        padding: 4rem 0 2.5rem;
+      }
+      @include query("mobile") {
+        padding: 0 0 2.5rem;
+      }
+      padding: 0 10rem;
+      .properties {
+        @include query("tablet") {
+          gap: 2rem;
+          margin-bottom: 10rem;
+          padding: 4rem 2rem 2.5rem;
+        }
+
+        @include query("mobile") {
+          padding: 3rem;
+          margin-bottom: 9vw;
+        }
+        margin-bottom: 10vw;
+        h2 {
+          font-size: $headerFontSize;
+          @include query("tablet") {
+            margin-bottom: 4rem;
+          }
+          @include query("mobile") {
+            font-size: $headerMobFontSize;
+            text-align: center;
+          }
+        }
+        @include displayFlexCol;
+        gap: 4rem;
+        > div {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          gap: 60px;
+          @include query("mobile") {
+            gap: 30px;
+          }
+          .eachProp {
+            @include query("tablet") {
+              width: 100%;
+            }
+            width: 38%;
+            display: flex;
+            gap: 4%;
+            backdrop-filter: blur(1px);
+            img {
+              width: 10%;
+              @include query("mobile") {
+                width: 15%;
+              }
+            }
+            > div {
+              @include displayFlexCol;
+              justify-content: space-between;
+              h4 {
+                @include query("tablet") {
+                  font-size: 1.2rem;
+                  letter-spacing: 1px;
+                }
+              }
+              p {
+                @include textStructure("madeThin", 0.7rem);
+                @include query("tablet") {
+                  @include textStructure("madeThin", 1rem);
+                }
+              }
+            }
+          }
+        }
+      }
+      .memberShip {
+        @include query("tablet") {
+          background-image: url(../images/fitnessWoman.png);
+          background-size: 70%;
+          padding: 4rem 2rem 2.5rem;
+        }
+        @include query("mobile") {
+          overflow: hidden;
+          width: 100%;
+          background-size: 60%;
+          background-position: 68% 150px;
+        }
+        margin-bottom: 10vw;
+        @include displayFlexCol;
+        gap: 50px;
+        background-image: url(../images/fit.png);
+        filter: drop-shadow(0 0 3px rgb(71, 70, 10));
+        background-position: 54% 200px;
+        background-repeat: no-repeat;
+        background-size: 67%;
+        h2 {
+          font-size: $headerFontSize;
+          text-align: center;
+        }
+        .memberShipCards {
+          
+          @include query("desktop") {
+            padding: 0;
+            gap: 25px;
+          }
+          @include query("miniDesktop") {
+            padding: 0;
+            gap: 4vw;
+          }
+          @include query("mobile") {
+            width: 450%;
+            flex-wrap: nowrap;
+            padding-left: 0rem;
+          }
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 50px;
+          padding: 0 5rem;
+
+          .card {
+            @include query("desktop") {
+              width: 31%;
+            }
+            @include query("miniDesktop") {
+              width: 30%;
+            }
+            @include query("tablet") {
+              width: 45%;
+            }
+            @include query("mobile") {
+              width: 80%;
+              min-height: 450px;
+            }
+            width: 26%;
+            background-color: rgba(25, 25, 25, 0.745);
+            box-shadow: 0 0 4px $baseYellow;
+            border-radius: 10px;
+            min-height: 350px;
+            @include query("tablet") {
+              min-height: 280px;
+            }
+            @include displayFlexCol;
+            button {
+              align-self: center;
+              transition: $baseTransition;
+              @include yellowBtn;
+              &:hover {
+                @include yellowBtnOnHover;
+              }
+            }
+            .cardHead {
+              border-bottom: 1px solid gray;
+              text-align: center;
+              @include textStructure("madeLight", 0.8rem);
+              padding: 1.2rem 0;
+              gap: 5px;
+              @include displayFlexCol;
+            }
+            .cardBadge {
+              @include displayFlexCol;
+              height: 60%;
+              justify-content: space-between;
+              > div {
+                @include displayFlexCol;
+                justify-content: space-between;
+                div {
+                  @include query("tablet") {
+                  font-size: 1.1rem;
+                  }
+                  @include query("mobile") {
+                  font-size: 1.3rem;
+                  }
+                  display: flex;
+                  justify-content: left;
+                  align-items: center;
+                  @include textStructure("madeThin", 0.8rem);
+                  padding: 0.5rem 1.2rem 0;
+                  gap: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .aboutUs {
+        @include query("desktop") {
+          gap: 15px;
+        }
+        @include query("miniDesktop") {
+          gap: 20px;
+        }
+
+        @include query("tablet") {
+          flex-direction: column;
+          text-align: center;
+          padding: 4rem 2rem 2.5rem;
+        }
+        margin-bottom: 10vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .aboutDesc {
+          @include query("desktop") {
+            width: 60%;
+            padding-bottom: 0.5rem;
+          }
+          @include query("miniDesktop") {
+            width: 85%;
+          }
+          @include query("tablet") {
+            width: 100%;
+          }
+          @include displayFlexCol;
+          justify-content: flex-start;
+          padding-bottom: 1.5rem;
+          width: 45%;
+          gap: 5%;
+          h2 {
+            font-size: $headerFontSize;
+            @include query("mobile") {
+              margin-bottom: 4rem;
+            }
+          }
+          p {
+            @include query("desktop") {
+              margin-bottom: 0.5rem;
+              font-size: 0.85rem;
+            }
+            @include query("miniDesktop") {
+              margin-bottom: 0.5rem;
+            }
+            @include query("tablet") {
+            font-size: 1.1rem;
+            }
+            @include query("mobile") {
+            font-size: .9rem;
+            }
+            margin-bottom: 1.5rem;
+            @include textStructure("madeThin", 0.95rem);
+          }
+        }
+        .aboutCont {
+          @include query("desktop") {
+            width: 75%;
+          }
+          @include query("miniDesktop") {
+            width: 85%;
+          }
+          @include query("tablet") {
+            width: 100%;
+          }
+          width: 45%;
+          @include displayFlexCol;
+          gap: 10px;
+          img {
+            width: 100%;
+            float: right;
+          }
+          div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include query("mobile") {
+              flex-direction: column-reverse;
+              gap: 10px;
+            }
+            .arrows {
+              display: flex;
+              gap: 10px;
+
+              @include query("mobile") {
+                display: none;
+              }
+            }
+            .dots {
+              @include query("mobile") {
+                gap: 15px;
+              }
+              flex-direction: row;
+              display: flex;
+              gap: 5px;
+              span {
+                &:first-child {
+                  background-color: $baseYellow;
+                }
+                width: 30px;
+                height: 2px;
+                @include query("mobile") {
+                  width: 40px;
+                  height: 5px;
+                }
+
+                background-color: $baseWhite;
+              }
+            }
+          }
+        }
+      }
+      .staff {
+        @include query("tablet") {
+          margin-top: 12vh;
+          margin-bottom: 12vh;
+
+          padding: 4rem 0 2.5rem 2rem;
+        }
+        margin-bottom: 10vw;
+        @include displayFlexCol;
+        gap: 50px;
+        h2 {
+          font-size: $headerFontSize;
+          text-align: center;
+        }
+        .staffContainer {
+          @include query("desktop") {
+            justify-content: flex-start;
+            overflow: hidden;
+          }
+
+          @include query("tablet") {
+            flex-wrap: nowrap;
+            padding-left: 1rem;
+          }
+          
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+          flex-wrap: wrap;
+          display: flex;
+          justify-content: center;
+          gap: 5%;
+          row-gap: 45px;
+          .staffCard {
+            &:hover {
+              transition: $baseTransition;
+              transform: scale(1.01);
+              box-shadow: 0 0 5px $baseYellow;
+            }
+            @include query("desktop") {
+              width: 30%;
+            }
+            @include query("tablet") {
+              width: 40%;
+            }
+            @include query("mobile") {
+              width: 70%;
+            }
+            border: none;
+            width: 27%;
+            padding: 1.2rem;
+            border-radius: 25px;
+            background-color: $baseCard;
+            text-align: center;
+            gap: 20px;
+            @include displayFlexCol;
+
+            h3 {
+              font-size: 1rem;
+            }
+            .staffSocial {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 15px;
+              div {
+                @include socialWaysDefault;
+                &:hover {
+                  @include yellowBtnOnHover;
+                  border: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  footer {
+    border-top: 1px solid $baseYellow;
+    @include query("miniDesktop") {
+      padding: 2rem 3rem;
+    }
+    @include query("mobile") {
+      padding-top: 4rem;
+    }
+    @include displayFlexCol;
+    padding: 4rem 10rem;
+    background-color: $backgroundBlackColor;
+    .footerContainer {
+      display: flex;
+      @include query("mobile") {
+        flex-direction: column;
+      }
+      justify-content: space-between;
+      > div {
+        width: 25%;
+        @include displayFlexCol;
+        gap: 25px;
+        @include textStructure("madeThin", 0.8rem);
+        @include query("mobile") {
+          gap: 10px;
+        }
+      }
+      .brandFooter {
+        img {
+          width: 100px;
+        }
+        @include query("tablet") {
+          display: none;
+        }
+      }
+      .addressFooter {
+        width: 14%;
+        @include query("tablet") {
+          width: 40%;
+        }
+        @include query("mobile") {
+          width: 60%;
+          margin: auto;
+          text-align: center;
+        }
+      }
+      .contactFooter {
+        @include query("tablet") {
+          width: 40%;
+        }
+        @include query("mobile") {
+          width: 80%;
+          text-align: center;
+          margin: auto;
+        }
+        .contactDiv {
+          @include displayFlexCol;
+          gap: 25px;
+          .contactWays {
+            @include query("mobile") {
+              margin: 0 auto;
+            }
+            @include displayFlexCol;
+            gap: 10px;
+            div {
+              display: flex;
+              gap: 10px;
+            }
+          }
+          .contactSocials {
+            display: flex;
+            gap: 10px;
+            @include query("mobile") {
+              justify-content: space-between;
+            }
+            div {
+              @include socialWaysDefault;
+              &:hover {
+                @include yellowBtnOnHover;
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .copyright {
+      @include query("tablet") {
+        margin-top: 2.5rem;
+      }
+      text-align: center;
+      margin-top: 5rem;
+      @include displayFlexCol;
+      @include textStructure("madeThin", 0.6rem);
+      gap: 5px;
+      span {
+        color: $baseYellow;
+      }
+    }
+  }
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #e4fe20 #000000;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #e4fe20;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}

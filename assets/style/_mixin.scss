@@ -1,0 +1,58 @@
+@import "variables";
+@mixin textRegulary {
+  color: white;
+  font-size: 0.8rem;
+}
+@mixin yellowBtn {
+  background-color: $baseYellow;
+  display: flex;
+  padding: 3% 12%;
+  color: $backgroundBlackColor;
+  border-radius: 5rem;
+  font-family: "madeRegular";
+  border: 1px solid $baseCard;
+}
+@mixin yellowBtnOnHover {
+  color: $baseYellow;
+  border: 1px solid $baseWhite;
+  background-color: $backgroundBlackColor;
+  transition: $baseTransition;
+  cursor: pointer;
+}
+@mixin textStructure($font, $size) {
+  font-family: $font;
+  font-size: $size;
+}
+@mixin displayFlexCol {
+  display: flex;
+  flex-direction: column;
+}
+@mixin socialWaysDefault {
+  border: 1px solid $baseWhite;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: 100;
+  text-align: center;
+}
+@mixin query($size) {
+  @if ($size==mobile) {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  } @else if($size==tablet) {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  } @else if($size==miniDesktop) {
+    @media only screen and (max-width: 1000px) {
+      @content;
+    }
+  } @else if($size==desktop) {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+}

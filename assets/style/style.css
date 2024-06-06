@@ -1,0 +1,975 @@
+@font-face {
+  font-family: "madeThin";
+  src: url(../fonts/MADE\ Outer\ Sans\ Thin\ PERSONAL\ USE.otf);
+}
+@font-face {
+  font-family: "madeLight";
+  src: url(../fonts/MADE\ Outer\ Sans\ Light\ PERSONAL\ USE.otf);
+}
+@font-face {
+  font-family: "madeRegular";
+  src: url(../fonts/MADE\ Outer\ Sans\ Regular\ PERSONAL\ USE.otf);
+}
+@font-face {
+  font-family: "madeBold";
+  src: url(../fonts/MADE\ Outer\ Sans\ Bold\ PERSONAL\ USE.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  html,
+  body {
+    font-size: 10px;
+  }
+}
+
+.container {
+  position: relative;
+  font-family: "madeLight";
+  background-image: url(../images/bgPatter.svg);
+  background-size: 200px;
+  color: white;
+  font-size: 0.8rem;
+  width: 100%;
+  background-color: #000;
+}
+.container header {
+  position: sticky !important;
+  background-color: rgba(0, 0, 0, 0.643);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(255, 255, 0, 0.792), 0 3px 2px rgba(3, 3, 3, 0.299);
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  z-index: 100;
+  justify-content: space-between;
+  padding: 2rem 14rem;
+  /* burgermenu */
+}
+@media only screen and (max-width: 1200px) {
+  .container header {
+    padding: 2rem 8rem;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .container header {
+    padding: 2rem 4rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container header {
+    padding: 2rem;
+  }
+}
+.container header img {
+  height: 100%;
+}
+@media only screen and (max-width: 768px) {
+  .container header nav {
+    display: none;
+  }
+}
+.container header nav ul {
+  display: flex;
+  gap: 3rem;
+}
+.container header nav ul li a {
+  color: white;
+  font-size: 0.8rem;
+  font-family: "madeThin";
+  transition: all 0.2s ease-in-out;
+}
+.container header nav ul li a:hover {
+  transition: all 0.2s ease-in-out;
+  color: #faff00;
+  border-top: 1px solid #faff00;
+}
+.container header #showMenu {
+  width: 100%;
+  display: none;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000000;
+  z-index: 10;
+}
+.container header #showMenu img {
+  width: 160px;
+  height: 150px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container header #showMenu div {
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #faff00;
+  font-family: "madeThin";
+  font-size: 0.7rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 2.2rem;
+}
+@media only screen and (max-width: 480px) {
+  .container header #showMenu div {
+    font-size: 1.5rem;
+  }
+}
+.container header .burgermenu {
+  display: none;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  margin-top: 20px;
+  right: 9%;
+  top: -23%;
+  z-index: 1000;
+}
+@media only screen and (max-width: 768px) {
+  .container header .burgermenu {
+    display: block;
+    right: 3.5%;
+    top: -30%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container header .burgermenu {
+    top: -38%;
+  }
+}
+.container header .ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.container header .hamRotate.active {
+  transform: rotate(45deg);
+}
+.container header .hamRotate180.active {
+  transform: rotate(180deg);
+}
+.container header .line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: #faff00;
+  stroke-width: 4.5;
+  stroke-linecap: round;
+}
+.container header .ham1 .top {
+  stroke-dasharray: 40 139;
+}
+.container header .ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+.container header .ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+.container header .ham1.active .bottom {
+  stroke-dashoffset: -138px;
+}
+.container main .mainContent {
+  background-color: #000;
+  padding-left: 14rem;
+  padding-right: 6rem;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 5px 100px 100px #000;
+  margin-bottom: 10rem;
+  height: 90vh;
+}
+@media only screen and (max-width: 1200px) {
+  .container main .mainContent {
+    padding: 0 2rem 0 8rem;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .container main .mainContent {
+    padding: 0 4rem;
+    margin-bottom: 0rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container main .mainContent {
+    padding: 0 0 0 2rem;
+    height: 70vh;
+  }
+}
+.container main .mainContent .mainImage {
+  background-image: url(../images/vintegeManOnHome.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  width: 90%;
+}
+@media only screen and (max-width: 1200px) {
+  .container main .mainContent .mainImage {
+    background-position: 100%;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .container main .mainContent .mainImage {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container main .mainContent .mainImage {
+    background-size: 70%;
+    background-position: 140%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container main .mainContent .mainImage {
+    background-size: 80%;
+  }
+}
+.container main .mainContent .mainText {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+}
+@media only screen and (max-width: 768px) {
+  .container main .mainContent .mainText {
+    width: 70%;
+  }
+  .container main .mainContent .mainText h1 {
+    font-size: 2.6rem !important;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container main .mainContent .mainText {
+    width: 95%;
+    text-align: center;
+    -webkit-backdrop-filter: brightness(60%);
+            backdrop-filter: brightness(60%);
+  }
+}
+.container main .mainContent .mainText h1 {
+  font-size: 3rem;
+}
+.container main .mainContent .mainText .btn {
+  background-color: #faff00;
+  display: flex;
+  padding: 3% 12%;
+  color: #000;
+  border-radius: 5rem;
+  font-family: "madeRegular";
+  border: 1px solid #222222;
+  width: auto;
+  align-self: flex-start;
+  transition: all 0.2s ease-in-out;
+}
+@media only screen and (max-width: 480px) {
+  .container main .mainContent .mainText .btn {
+    align-self: center;
+    margin-top: 5rem;
+  }
+}
+.container main .mainContent .mainText .btn:hover {
+  cursor: pointer;
+  color: #faff00;
+  border: 1px solid #fff;
+  background-color: #000;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.container main .adventage {
+  padding: 0 10rem;
+}
+@media only screen and (max-width: 1200px) {
+  .container main .adventage {
+    padding: 0 8rem;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .container main .adventage {
+    padding: 4rem 2.5rem 2.5rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage {
+    padding: 4rem 0 2.5rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage {
+    padding: 0 0 2.5rem;
+  }
+}
+.container main .adventage .properties {
+  margin-bottom: 10vw;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .properties {
+    gap: 2rem;
+    margin-bottom: 10rem;
+    padding: 4rem 2rem 2.5rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage .properties {
+    padding: 3rem;
+    margin-bottom: 9vw;
+  }
+}
+.container main .adventage .properties h2 {
+  font-size: 2.5rem;
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .properties h2 {
+    margin-bottom: 4rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage .properties h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+.container main .adventage .properties > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage .properties > div {
+    gap: 30px;
+  }
+}
+.container main .adventage .properties > div .eachProp {
+  width: 38%;
+  display: flex;
+  gap: 4%;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .properties > div .eachProp {
+    width: 100%;
+  }
+}
+.container main .adventage .properties > div .eachProp img {
+  width: 10%;
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage .properties > div .eachProp img {
+    width: 15%;
+  }
+}
+.container main .adventage .properties > div .eachProp > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .properties > div .eachProp > div h4 {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+}
+.container main .adventage .properties > div .eachProp > div p {
+  font-family: "madeThin";
+  font-size: 0.7rem;
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .properties > div .eachProp > div p {
+    font-family: "madeThin";
+    font-size: 1rem;
+  }
+}
+.container main .adventage .memberShip {
+  margin-bottom: 10vw;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background-image: url(../images/fit.png);
+  filter: drop-shadow(0 0 3px rgb(71, 70, 10));
+  background-position: 54% 200px;
+  background-repeat: no-repeat;
+  background-size: 67%;
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .memberShip {
+    background-image: url(../images/fitnessWoman.png);
+    background-size: 70%;
+    padding: 4rem 2rem 2.5rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage .memberShip {
+    overflow: hidden;
+    width: 100%;
+    background-size: 60%;
+    background-position: 68% 150px;
+  }
+}
+.container main .adventage .memberShip h2 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+.container main .adventage .memberShip .memberShipCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 0 5rem;
+}
+@media only screen and (max-width: 1200px) {
+  .container main .adventage .memberShip .memberShipCards {
+    padding: 0;
+    gap: 25px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .container main .adventage .memberShip .memberShipCards {
+    padding: 0;
+    gap: 4vw;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage .memberShip .memberShipCards {
+    width: 450%;
+    flex-wrap: nowrap;
+    padding-left: 0rem;
+  }
+}
+.container main .adventage .memberShip .memberShipCards .card {
+  width: 26%;
+  background-color: rgba(25, 25, 25, 0.745);
+  box-shadow: 0 0 4px #faff00;
+  border-radius: 10px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (max-width: 1200px) {
+  .container main .adventage .memberShip .memberShipCards .card {
+    width: 31%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .container main .adventage .memberShip .memberShipCards .card {
+    width: 30%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .memberShip .memberShipCards .card {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage .memberShip .memberShipCards .card {
+    width: 80%;
+    min-height: 450px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .memberShip .memberShipCards .card {
+    min-height: 280px;
+  }
+}
+.container main .adventage .memberShip .memberShipCards .card button {
+  align-self: center;
+  transition: all 0.2s ease-in-out;
+  background-color: #faff00;
+  display: flex;
+  padding: 3% 12%;
+  color: #000;
+  border-radius: 5rem;
+  font-family: "madeRegular";
+  border: 1px solid #222222;
+}
+.container main .adventage .memberShip .memberShipCards .card button:hover {
+  color: #faff00;
+  border: 1px solid #fff;
+  background-color: #000;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.container main .adventage .memberShip .memberShipCards .card .cardHead {
+  border-bottom: 1px solid gray;
+  text-align: center;
+  font-family: "madeLight";
+  font-size: 0.8rem;
+  padding: 1.2rem 0;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.container main .adventage .memberShip .memberShipCards .card .cardBadge {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  justify-content: space-between;
+}
+.container main .adventage .memberShip .memberShipCards .card .cardBadge > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container main .adventage .memberShip .memberShipCards .card .cardBadge > div div {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-family: "madeThin";
+  font-size: 0.8rem;
+  padding: 0.5rem 1.2rem 0;
+  gap: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .memberShip .memberShipCards .card .cardBadge > div div {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage .memberShip .memberShipCards .card .cardBadge > div div {
+    font-size: 1.3rem;
+  }
+}
+.container main .adventage .aboutUs {
+  margin-bottom: 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 1200px) {
+  .container main .adventage .aboutUs {
+    gap: 15px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .container main .adventage .aboutUs {
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .aboutUs {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 2rem 2.5rem;
+  }
+}
+.container main .adventage .aboutUs .aboutDesc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 1.5rem;
+  width: 45%;
+  gap: 5%;
+}
+@media only screen and (max-width: 1200px) {
+  .container main .adventage .aboutUs .aboutDesc {
+    width: 60%;
+    padding-bottom: 0.5rem;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .container main .adventage .aboutUs .aboutDesc {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .aboutUs .aboutDesc {
+    width: 100%;
+  }
+}
+.container main .adventage .aboutUs .aboutDesc h2 {
+  font-size: 2.5rem;
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage .aboutUs .aboutDesc h2 {
+    margin-bottom: 4rem;
+  }
+}
+.container main .adventage .aboutUs .aboutDesc p {
+  margin-bottom: 1.5rem;
+  font-family: "madeThin";
+  font-size: 0.95rem;
+}
+@media only screen and (max-width: 1200px) {
+  .container main .adventage .aboutUs .aboutDesc p {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .container main .adventage .aboutUs .aboutDesc p {
+    margin-bottom: 0.5rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .aboutUs .aboutDesc p {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage .aboutUs .aboutDesc p {
+    font-size: 0.9rem;
+  }
+}
+.container main .adventage .aboutUs .aboutCont {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media only screen and (max-width: 1200px) {
+  .container main .adventage .aboutUs .aboutCont {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .container main .adventage .aboutUs .aboutCont {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .aboutUs .aboutCont {
+    width: 100%;
+  }
+}
+.container main .adventage .aboutUs .aboutCont img {
+  width: 100%;
+  float: right;
+}
+.container main .adventage .aboutUs .aboutCont div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage .aboutUs .aboutCont div {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+}
+.container main .adventage .aboutUs .aboutCont div .arrows {
+  display: flex;
+  gap: 10px;
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage .aboutUs .aboutCont div .arrows {
+    display: none;
+  }
+}
+.container main .adventage .aboutUs .aboutCont div .dots {
+  flex-direction: row;
+  display: flex;
+  gap: 5px;
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage .aboutUs .aboutCont div .dots {
+    gap: 15px;
+  }
+}
+.container main .adventage .aboutUs .aboutCont div .dots span {
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+}
+.container main .adventage .aboutUs .aboutCont div .dots span:first-child {
+  background-color: #faff00;
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage .aboutUs .aboutCont div .dots span {
+    width: 40px;
+    height: 5px;
+  }
+}
+.container main .adventage .staff {
+  margin-bottom: 10vw;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .staff {
+    margin-top: 12vh;
+    margin-bottom: 12vh;
+    padding: 4rem 0 2.5rem 2rem;
+  }
+}
+.container main .adventage .staff h2 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+.container main .adventage .staff .staffContainer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  row-gap: 45px;
+}
+@media only screen and (max-width: 1200px) {
+  .container main .adventage .staff .staffContainer {
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .staff .staffContainer {
+    flex-wrap: nowrap;
+    padding-left: 1rem;
+  }
+}
+.container main .adventage .staff .staffContainer .staffCard {
+  border: none;
+  width: 27%;
+  padding: 1.2rem;
+  border-radius: 25px;
+  background-color: #222222;
+  text-align: center;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.container main .adventage .staff .staffContainer .staffCard:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.01);
+  box-shadow: 0 0 5px #faff00;
+}
+@media only screen and (max-width: 1200px) {
+  .container main .adventage .staff .staffContainer .staffCard {
+    width: 30%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container main .adventage .staff .staffContainer .staffCard {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container main .adventage .staff .staffContainer .staffCard {
+    width: 70%;
+  }
+}
+.container main .adventage .staff .staffContainer .staffCard h3 {
+  font-size: 1rem;
+}
+.container main .adventage .staff .staffContainer .staffCard .staffSocial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.container main .adventage .staff .staffContainer .staffCard .staffSocial div {
+  border: 1px solid #fff;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: 100;
+  text-align: center;
+}
+.container main .adventage .staff .staffContainer .staffCard .staffSocial div:hover {
+  color: #faff00;
+  border: 1px solid #fff;
+  background-color: #000;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+.container footer {
+  border-top: 1px solid #faff00;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 10rem;
+  background-color: #000;
+}
+@media only screen and (max-width: 1000px) {
+  .container footer {
+    padding: 2rem 3rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container footer {
+    padding-top: 4rem;
+  }
+}
+.container footer .footerContainer {
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 480px) {
+  .container footer .footerContainer {
+    flex-direction: column;
+  }
+}
+.container footer .footerContainer > div {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-family: "madeThin";
+  font-size: 0.8rem;
+}
+@media only screen and (max-width: 480px) {
+  .container footer .footerContainer > div {
+    gap: 10px;
+  }
+}
+.container footer .footerContainer .brandFooter img {
+  width: 100px;
+}
+@media only screen and (max-width: 768px) {
+  .container footer .footerContainer .brandFooter {
+    display: none;
+  }
+}
+.container footer .footerContainer .addressFooter {
+  width: 14%;
+}
+@media only screen and (max-width: 768px) {
+  .container footer .footerContainer .addressFooter {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container footer .footerContainer .addressFooter {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container footer .footerContainer .contactFooter {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container footer .footerContainer .contactFooter {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+  }
+}
+.container footer .footerContainer .contactFooter .contactDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.container footer .footerContainer .contactFooter .contactDiv .contactWays {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media only screen and (max-width: 480px) {
+  .container footer .footerContainer .contactFooter .contactDiv .contactWays {
+    margin: 0 auto;
+  }
+}
+.container footer .footerContainer .contactFooter .contactDiv .contactWays div {
+  display: flex;
+  gap: 10px;
+}
+.container footer .footerContainer .contactFooter .contactDiv .contactSocials {
+  display: flex;
+  gap: 10px;
+}
+@media only screen and (max-width: 480px) {
+  .container footer .footerContainer .contactFooter .contactDiv .contactSocials {
+    justify-content: space-between;
+  }
+}
+.container footer .footerContainer .contactFooter .contactDiv .contactSocials div {
+  border: 1px solid #fff;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: 100;
+  text-align: center;
+}
+.container footer .footerContainer .contactFooter .contactDiv .contactSocials div:hover {
+  color: #faff00;
+  border: 1px solid #fff;
+  background-color: #000;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+.container footer .copyright {
+  text-align: center;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  font-family: "madeThin";
+  font-size: 0.6rem;
+  gap: 5px;
+}
+@media only screen and (max-width: 768px) {
+  .container footer .copyright {
+    margin-top: 2.5rem;
+  }
+}
+.container footer .copyright span {
+  color: #faff00;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #e4fe20 #000000;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #e4fe20;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}/*# sourceMappingURL=style.css.map */
