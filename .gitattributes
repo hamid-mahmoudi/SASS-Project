@@ -10,3 +10,4 @@ path/to/large/file linguist-vendored
 docs/* linguist-documentation
 examples/* linguist-examples
 assets/style/all.css linguist-vendored
+assets/style/style.css linguist-vendored
